@@ -13,23 +13,62 @@ main {
   width: 100%;
 }
 
+.container,
+.search-box > input[type] {
+  border-radius: 5rem;
+}
+
 main {
   background: rgb(29, 38, 125);
   background: linear-gradient(144deg, rgb(29, 38, 125) 26%, rgb(29, 38, 125) 45%, rgb(12, 19, 79) 74%);
 }
 main .container {
-  height: 50rem;
-  width: 100rem;
+  height: 70rem;
+  width: 40rem;
   position: relative;
-  border-radius: 5rem;
-  background: rgb(212, 173, 252);
-  background: linear-gradient(144deg, rgb(212, 173, 252) 10%, rgb(92, 70, 156) 91%);
+  background: rgba(212, 173, 252, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 main .container .search-box {
-  position: absolute;
-  top: 0;
   height: 5rem;
+  width: 100%;
+  position: relative;
 }
-main .container .search-box input:text {
-  background-color: red;
+main .container .search-box input[type] {
+  height: 5rem;
+  width: calc(100% - 2rem - 5rem);
+  outline: none;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+}
+main .container .search-box .search-icon {
+  margin-right: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  background-color: #fff;
+}
+main .container .search-box .search-icon img {
+  width: 2rem;
+  fill: #5c469c;
+  stroke-width: 5;
+}
+main .container .wrapper {
+  height: 100%;
+  width: 100%;
+}
+main .container .wrapper .left .weather-icon img {
+  width: 100%;
+}
+main .container .wrapper .right div {
+  background: rgba(216, 183, 250, 0.01);
+}
+main .container .wrapper .right div img {
+  width: 4rem;
 }/*# sourceMappingURL=style.css.map */
