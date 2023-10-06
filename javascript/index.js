@@ -14,4 +14,11 @@ const fetchDataCurrent = async (country) => {
 };
 
 
+const renderMainIcon = (weather) => {
+  const weatherIcon = document
+    .getElementById("weather-icon")
+    .querySelector("img");
+
+  weatherIcon.src = iconWeather[weather];
+};
 
