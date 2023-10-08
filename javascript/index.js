@@ -69,4 +69,15 @@ const capitalizeWords = (text) => {
     .join(" ");
 };
 
+const searchWeatherLocation = async () => {
+  const search = document.querySelector("#search-icon");
+  const location = document.querySelector("#search-location");
+
+  search.addEventListener("click", () => {
+    fetchDataWeather(location.value);
+    location.value = "";
+  });
+};
+
+searchWeatherLocation();
 main();
