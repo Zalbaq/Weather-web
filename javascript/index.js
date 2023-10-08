@@ -47,9 +47,9 @@ const fetchDataWeather = async (location) => {
   }
 
   temp.textContent = `${(data.current.main.temp - 273.15).toFixed(2)}°`;
-  locationH2.textContent = `${data.current.name}`
+  locationH2.textContent = `${capitalizeWords(location)}`;
   humidity.textContent = `${data.current.main.humidity}%`;
-  windSpeed.textContent = `${data.current.wind.speed}Km/h`;
+  windSpeed.textContent = `${data.current.wind.speed} Km/h`;
   sunrise.textContent = `${realTimeSunrise.getHours()} : ${realTimeSunrise.getMinutes()} : ${realTimeSunrise.getSeconds()}`;
   sunset.textContent = `${realTimeSunset.getHours()} : ${realTimeSunrise.getMinutes()} : ${realTimeSunrise.getSeconds()}`;
 };
@@ -58,4 +58,15 @@ async function main() {
   const data = await fetchDataWeather("bali");
   console.log(data);
 }
+
+const capitalizeWords = (text) => {
+  return text
+    .toLowerCase()
+    .split(" ")
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+};
+
 main();
