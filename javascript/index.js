@@ -55,7 +55,7 @@ const fetchDataWeather = async (location) => {
 };
 
 async function main() {
-  const data = await fetchDataWeather("bali");
+  const data = await fetchDataWeather("Nganjuk");
   console.log(data);
 }
 
@@ -77,7 +77,12 @@ const searchWeatherLocation = async () => {
     fetchDataWeather(location.value);
     location.value = "";
   });
+  location.addEventListener("keypress", (e) => {
+    if (e.keyCode == 13) {
+      fetchDataWeather(location.value);
+      location.value = "";
+    }
+  });
 };
 
 searchWeatherLocation();
-main();
