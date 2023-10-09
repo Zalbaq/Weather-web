@@ -13,6 +13,7 @@ html {
 main {
   height: 100vh;
   width: 100%;
+  letter-spacing: 2px;
 }
 
 .container,
@@ -47,7 +48,7 @@ main .container .search-box input[type] {
   padding: 0 2rem;
   font-size: 1.5rem;
 }
-main .container .search-box .search-icon {
+main .container .search-box #search-icon {
   cursor: pointer;
   margin-right: 1rem;
   position: absolute;
@@ -58,7 +59,7 @@ main .container .search-box .search-icon {
   width: 5rem;
   background-color: #fff;
 }
-main .container .search-box .search-icon img {
+main .container .search-box #search-icon img {
   width: 2rem;
   fill: #5c469c;
   stroke-width: 5;
@@ -69,23 +70,35 @@ main .container .wrapper {
   width: 100%;
 }
 main .container .wrapper .left #weather-icon {
-  width: 100%;
+  width: 40rem;
+  transition: 0.25s ease-in-out;
+  border-radius: 100%;
+  animation: fadeOut 1s;
 }
 main .container .wrapper .left #weather-icon img {
   width: 100%;
-  transition: 0.25s ease-in-out;
   cursor: pointer;
 }
-main .container .wrapper .left #weather-icon img:hover {
+main .container .wrapper .left #weather-icon:hover {
   scale: 1.2;
 }
+main .container .wrapper .left #weather-icon:hover + .info {
+  scale: 0.8;
+}
 main .container .wrapper .left .info {
+  animation: fadeOut 1s alternate;
   position: absolute;
   bottom: 25rem;
-  font-size: 5rem;
+  font-size: 4rem;
   color: white;
   font-weight: 700;
-  letter-spacing: 2px;
+  transition: 0.25s ease-in-out;
+}
+main .container .wrapper .left .info:hover {
+  scale: 1.2;
+}
+main .container .wrapper .left .info:hover ~ #weather-icon {
+  scale: 0.1;
 }
 main .container .wrapper .right div {
   color: white;
@@ -95,6 +108,10 @@ main .container .wrapper .right div {
   align-items: center;
   justify-content: space-around;
 }
+main .container .wrapper .right div img,
+main .container .wrapper .right div label {
+  cursor: pointer;
+}
 main .container .wrapper .right div img {
   height: 4rem;
   width: 4rem;
@@ -102,4 +119,15 @@ main .container .wrapper .right div img {
 main .container .wrapper .right div label {
   font-size: 1.5rem;
   text-align: center;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

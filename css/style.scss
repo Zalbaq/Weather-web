@@ -17,6 +17,7 @@ html {
 main {
   height: 100vh;
   width: 100%;
+  letter-spacing: 2px;
 }
 .container,
 .search-box > input[type] {
@@ -51,7 +52,7 @@ main {
         padding: 0 2rem;
         font-size: 1.5rem;
       }
-      .search-icon {
+      #search-icon {
         cursor: pointer;
         margin-right: 1rem;
         position: absolute;
@@ -74,23 +75,35 @@ main {
       width: 100%;
       .left {
         #weather-icon {
-          width: 100%;
+          width: 40rem;
+          transition: 0.25s ease-in-out;
+          border-radius: 100%;
+          animation: fadeOut 1s;
           img {
             width: 100%;
-            transition: 0.25s ease-in-out;
             cursor: pointer;
-            &:hover {
-              scale: 1.2;
-            }
+          }
+          &:hover {
+            scale: 1.2;
+          }
+          &:hover + .info {
+            scale: 0.8;
           }
         }
         .info {
+          animation: fadeOut 1s alternate;
           position: absolute;
           bottom: 25rem;
-          font-size: 5rem;
+          font-size: 4rem;
           color: white;
           font-weight: 700;
-          letter-spacing: 2px;
+          transition: 0.25s ease-in-out;
+        }
+        & .info:hover {
+          scale: 1.2;
+        }
+        & .info:hover ~ #weather-icon {
+          scale: 0.1;
         }
       }
       .right {
@@ -101,6 +114,10 @@ main {
           display: flex;
           align-items: center;
           justify-content: space-around;
+          img,
+          label {
+            cursor: pointer;
+          }
           img {
             height: 4rem;
             width: 4rem;
@@ -112,5 +129,16 @@ main {
         }
       }
     }
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
   }
 }
