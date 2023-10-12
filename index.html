@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
+
+    <title>Weather Web</title>
+  </head>
+  <body>
+    <main class="flex items-center justify-center">
+      <div class="container p-11 flex flex-col justify-between items-center">
+        <div class="search-box">
+          <input
+            type="text"
+            name=""
+            id="search-location"
+            placeholder="Input your location"
+          />
+          <div id="search-icon" class="flex items-center justify-center">
+            <img src="../icon/search.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="wrapper flex flex-col justify-between">
+          <div class="left basis-1/2 flex flex-col justify-center items-center">
+            <div id="weather-icon">
+              <img src="../icon/animated/cloudy-day-1.svg" alt="" />
+            </div>
+            <div class="info flex flex-col items-center">
+              <h2 id="temp">20°</h2>
+              <h2 id="location">Nganjuk</h2>
+            </div>
+          </div>
+
+          <div
+            class="right px-5 basis-1/3 grid grid-flow-row grid-cols-2 grid-rows-2 gap-10"
+          >
+            <div id="humidity" class="flex items-center justify-center">
+              <img
+                src="../icon/humidity.svg"
+                alt="Humidity"
+                class="basis-1/2"
+              />
+              <label for="" class="basis-1/2">Humidity</label>
+            </div>
+            <div id="wind-speed" class="flex items-center justify-center">
+              <img src="../icon/wind.svg" alt="Wind Speed" class="basis-1/2" />
+              <label for="" class="basis-1/2">Wind Speed</label>
+            </div>
+            <div id="sunrise" class="flex items-center justify-center">
+              <img
+                src="../icon/sunrise.svg"
+                alt="Chance of Rain"
+                class="basis-1/2"
+              />
+              <label for="" class="basis-1/2">Chance of rain</label>
+            </div>
+            <div id="sunset" class="flex items-center justify-center">
+              <img src="../icon/sunset.svg" alt="Index UV" class="basis-1/2" />
+              <label for="" class="basis-1/2">UV</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../javascript/index.js" type="module"></script>
+  </body>
+</html>
